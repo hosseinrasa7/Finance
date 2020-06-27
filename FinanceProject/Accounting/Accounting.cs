@@ -21,7 +21,7 @@ namespace FinanceProject.Accounting
         private void accordionControlElement2_Click(object sender, EventArgs e)
         {
 
-            AccGroup accGroup = new AccGroup();
+            FrmAccGroup accGroup = new FrmAccGroup();
             accGroup.ShowDialog(this);
 
         }

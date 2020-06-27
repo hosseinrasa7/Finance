@@ -54,5 +54,41 @@ namespace FinanceProject.Properties {
                 return ((string)(this["FinanceDBConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("grpCode")]
+        public string grpCode {
+            get {
+                return ((string)(this["grpCode"]));
+            }
+            set {
+                this["grpCode"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("grpDscp")]
+        public string grpDscp {
+            get {
+                return ((string)(this["grpDscp"]));
+            }
+            set {
+                this["grpDscp"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Id")]
+        public string Id {
+            get {
+                return ((string)(this["Id"]));
+            }
+            set {
+                this["Id"] = value;
+            }
+        }
     }
 }

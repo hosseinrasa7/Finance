@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="FinanceDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="accGeneral">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="generalCode" Type="varchar" MaxLength="50" />
+          <Property Name="generalDscp" Type="varchar" MaxLength="50" />
+          <Property Name="test" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="AccSobidiary">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SobidiaryCode" Type="varchar" MaxLength="10" />
+          <Property Name="SobidiaryDscp" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="AccGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GrpCode" Type="varchar" MaxLength="50" />
+          <Property Name="GrpDscp" Type="varchar(max)" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'FinanceDB.dbo.Dr_Actions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="Dr_Actions">
+          <Key>
+            <PropertyRef Name="serial" />
+          </Key>
+          <Property Name="serial" Type="int" Nullable="false" />
+          <Property Name="FishPriority" Type="int" />
+          <Property Name="Type" Type="int" />
+          <Property Name="Title" Type="varchar" MaxLength="250" />
+          <Property Name="Percent" Type="int" />
+          <Property Name="Loan" Type="int" />
+          <Property Name="ReportName" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="WagEmployee">
+          <Key>
+            <PropertyRef Name="Serial" />
+          </Key>
+          <Property Name="Serial" Type="int" Nullable="false" />
+          <Property Name="NezamNo" Type="int" Nullable="false" />
+          <Property Name="PersCode" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="FatherName" Type="varchar" MaxLength="20" />
+          <Property Name="CertNo" Type="varchar" MaxLength="30" />
+          <Property Name="CertCode" Type="varchar" MaxLength="30" />
+          <Property Name="NationalCode" Type="varchar" MaxLength="30" />
+          <Property Name="BirthDate" Type="varchar" MaxLength="30" />
+          <Property Name="BirthLocation" Type="varchar" MaxLength="30" />
+          <Property Name="Gender" Type="varchar" MaxLength="30" />
+          <Property Name="BirthCertLoc" Type="varchar" MaxLength="30" />
+          <Property Name="AccountNo" Type="varchar" MaxLength="30" />
+          <Property Name="CardNo" Type="varchar" MaxLength="30" />
+          <Property Name="EmpType" Type="varchar" MaxLength="30" />
+          <Property Name="ProfRef" Type="int" />
+          <Property Name="Zarib" Type="varchar" MaxLength="30" />
+          <Property Name="FishAmount" Type="varchar" MaxLength="30" />
+          <Property Name="Aghidati" Type="varchar" MaxLength="30" />
+          <Property Name="OtaghAmal" Type="varchar" MaxLength="30" />
+          <Property Name="KosorBimarestan" Type="varchar" MaxLength="30" />
+          <Property Name="BldGpType" Type="varchar" MaxLength="30" />
+          <Property Name="PersName" Type="varchar" MaxLength="150" />
+        </EntityType>
+        <EntityContainer Name="FinanceDBModelStoreContainer">
+          <EntitySet Name="accGeneral" EntityType="Self.accGeneral" Schema="ACC" store:Type="Tables" />
+          <EntitySet Name="AccSobidiary" EntityType="Self.AccSobidiary" Schema="ACC" store:Type="Tables" />
+          <EntitySet Name="AccGroup" EntityType="Self.AccGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WagEmployee" EntityType="Self.WagEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Dr_Actions" EntityType="Self.Dr_Actions" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [Dr_Actions].[serial] AS [serial], 
+    [Dr_Actions].[FishPriority] AS [FishPriority], 
+    [Dr_Actions].[Type] AS [Type], 
+    [Dr_Actions].[Title] AS [Title], 
+    [Dr_Actions].[Percent] AS [Percent], 
+    [Dr_Actions].[Loan] AS [Loan], 
+    [Dr_Actions].[ReportName] AS [ReportName]
+    FROM [dbo].[Dr_Actions] AS [Dr_Actions]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="FinanceDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="accGeneral">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="generalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="generalDscp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="test" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AccSobidiary">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SobidiaryCode" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="SobidiaryDscp" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="WagEmployee">
+          <Key>
+            <PropertyRef Name="Serial" />
+          </Key>
+          <Property Name="Serial" Type="Int32" Nullable="false" />
+          <Property Name="NezamNo" Type="Int32" Nullable="false" />
+          <Property Name="PersCode" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FatherName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="CertNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CertCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="NationalCode" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BirthDate" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BirthLocation" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Gender" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BirthCertLoc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="AccountNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="CardNo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="EmpType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="ProfRef" Type="Int32" />
+          <Property Name="Zarib" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FishAmount" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Aghidati" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="OtaghAmal" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="KosorBimarestan" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="BldGpType" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="PersName" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Dr_Actions">
+          <Key>
+            <PropertyRef Name="serial" />
+          </Key>
+          <Property Name="serial" Type="Int32" Nullable="false" />
+          <Property Name="FishPriority" Type="Int32" />
+          <Property Name="Type" Type="Int32" />
+          <Property Name="Title" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Percent" Type="Int32" />
+          <Property Name="Loan" Type="Int32" />
+          <Property Name="ReportName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="FinanceDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="accGenerals" EntityType="Self.accGeneral" />
+          <EntitySet Name="AccSobidiaries" EntityType="Self.AccSobidiary" />
+          <EntitySet Name="WagEmployees" EntityType="Self.WagEmployee" />
+          <EntitySet Name="Dr_Actions" EntityType="Self.Dr_Actions" />
+          <EntitySet Name="AccGroups" EntityType="FinanceDBModel.AccGroup" />
+        </EntityContainer>
+        <EntityType Name="AccGroup">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="GrpCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="GrpDscp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="FinanceDBModelStoreContainer" CdmEntityContainer="FinanceDBEntities">
+          <EntitySetMapping Name="accGenerals">
+            <EntityTypeMapping TypeName="FinanceDBModel.accGeneral">
+              <MappingFragment StoreEntitySet="accGeneral">
+                <ScalarProperty Name="test" ColumnName="test" />
+                <ScalarProperty Name="generalCode" ColumnName="generalCode" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="generalDscp" ColumnName="generalDscp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccSobidiaries">
+            <EntityTypeMapping TypeName="FinanceDBModel.AccSobidiary">
+              <MappingFragment StoreEntitySet="AccSobidiary">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="SobidiaryCode" ColumnName="SobidiaryCode" />
+                <ScalarProperty Name="SobidiaryDscp" ColumnName="SobidiaryDscp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WagEmployees">
+            <EntityTypeMapping TypeName="FinanceDBModel.WagEmployee">
+              <MappingFragment StoreEntitySet="WagEmployee">
+                <ScalarProperty Name="Serial" ColumnName="Serial" />
+                <ScalarProperty Name="NezamNo" ColumnName="NezamNo" />
+                <ScalarProperty Name="PersCode" ColumnName="PersCode" />
+                <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+                <ScalarProperty Name="CertNo" ColumnName="CertNo" />
+                <ScalarProperty Name="CertCode" ColumnName="CertCode" />
+                <ScalarProperty Name="NationalCode" ColumnName="NationalCode" />
+                <ScalarProperty Name="BirthDate" ColumnName="BirthDate" />
+                <ScalarProperty Name="BirthLocation" ColumnName="BirthLocation" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="BirthCertLoc" ColumnName="BirthCertLoc" />
+                <ScalarProperty Name="AccountNo" ColumnName="AccountNo" />
+                <ScalarProperty Name="CardNo" ColumnName="CardNo" />
+                <ScalarProperty Name="EmpType" ColumnName="EmpType" />
+                <ScalarProperty Name="ProfRef" ColumnName="ProfRef" />
+                <ScalarProperty Name="Zarib" ColumnName="Zarib" />
+                <ScalarProperty Name="FishAmount" ColumnName="FishAmount" />
+                <ScalarProperty Name="Aghidati" ColumnName="Aghidati" />
+                <ScalarProperty Name="OtaghAmal" ColumnName="OtaghAmal" />
+                <ScalarProperty Name="KosorBimarestan" ColumnName="KosorBimarestan" />
+                <ScalarProperty Name="BldGpType" ColumnName="BldGpType" />
+                <ScalarProperty Name="PersName" ColumnName="PersName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Dr_Actions">
+            <EntityTypeMapping TypeName="FinanceDBModel.Dr_Actions">
+              <MappingFragment StoreEntitySet="Dr_Actions">
+                <ScalarProperty Name="serial" ColumnName="serial" />
+                <ScalarProperty Name="FishPriority" ColumnName="FishPriority" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Percent" ColumnName="Percent" />
+                <ScalarProperty Name="Loan" ColumnName="Loan" />
+                <ScalarProperty Name="ReportName" ColumnName="ReportName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccGroups">
+            <EntityTypeMapping TypeName="IsTypeOf(FinanceDBModel.AccGroup)">
+              <MappingFragment StoreEntitySet="AccGroup">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="GrpDscp" ColumnName="GrpDscp" />
+                <ScalarProperty Name="GrpCode" ColumnName="GrpCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

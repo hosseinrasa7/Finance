@@ -21,5 +21,14 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=.;Initial Catalog=FinanceDB;Integrated Security=True</Value>
     </Setting>
+    <Setting Name="grpCode" Type="System.String" Scope="User">
+      <Value Profile="(Default)">grpCode</Value>
+    </Setting>
+    <Setting Name="grpDscp" Type="System.String" Scope="User">
+      <Value Profile="(Default)">grpDscp</Value>
+    </Setting>
+    <Setting Name="Id" Type="System.String" Scope="User">
+      <Value Profile="(Default)">Id</Value>
+    </Setting>
   </Settings>
 </SettingsFile>
