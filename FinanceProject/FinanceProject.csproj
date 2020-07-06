@@ -30,7 +30,7 @@
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -84,6 +84,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
@@ -120,13 +121,31 @@
     <Compile Include="Accounting\BasicInformation\FrmAccGroup.Designer.cs">
       <DependentUpon>FrmAccGroup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Accounting\BasicInformation\DataOperations\AccSobidiaryOperation.cs" />
+    <Compile Include="Accounting\BasicInformation\FrmAccKol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\BasicInformation\FrmAccKol.Designer.cs">
+      <DependentUpon>FrmAccKol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\BasicInformation\FrmAccMon.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Accounting\BasicInformation\FrmAccMon.Designer.cs">
+      <DependentUpon>FrmAccMon.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Accounting\IMainForm.cs" />
     <Compile Include="Accounting\Models\AccGroupModel.cs" />
     <Compile Include="ConnectionSetting.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ConnectionSetting.Designer.cs">
       <DependentUpon>ConnectionSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmParent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmParent.Designer.cs">
+      <DependentUpon>FrmParent.cs</DependentUpon>
     </Compile>
     <Compile Include="Login\Login.cs">
       <SubType>Form</SubType>
@@ -140,6 +159,12 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="MessageDialogs\SFrmNotifyDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageDialogs\SFrmNotifyDialog.Designer.cs">
+      <DependentUpon>SFrmNotifyDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\AccGroupService.cs" />
@@ -151,14 +176,26 @@
     <EmbeddedResource Include="Accounting\BasicInformation\FrmAccGroup.resx">
       <DependentUpon>FrmAccGroup.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\BasicInformation\FrmAccKol.resx">
+      <DependentUpon>FrmAccKol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Accounting\BasicInformation\FrmAccMon.resx">
+      <DependentUpon>FrmAccMon.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ConnectionSetting.resx">
       <DependentUpon>ConnectionSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmParent.resx">
+      <DependentUpon>FrmParent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageDialogs\SFrmNotifyDialog.resx">
+      <DependentUpon>SFrmNotifyDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

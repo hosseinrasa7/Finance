@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FinanceProject.Accounting.BasicInformation.DataOperations
+namespace FinanceProject.Accounting
 {
-    public class AccSobidiaryOperation
+    public interface IMainForm
     {
+        void SetDataSource(object DataSource);
     }
 }

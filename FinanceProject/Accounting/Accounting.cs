@@ -1,5 +1,6 @@
 ﻿
 using FinanceProject.Accounting.BasicInformation;
+using FinanceProject.Services;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +29,14 @@ namespace FinanceProject.Accounting
 
         private void accordionControlElement4_Click(object sender, EventArgs e)
         {
+            FrmAccMon accMon = new FrmAccMon((new AccGroupService()).SelectAll());
+            accMon.ShowDialog(this);
+        }
 
+        private void accordionControlElement3_Click(object sender, EventArgs e)
+        {
+            FrmAccKol accKol = new FrmAccKol((new AccGroupService()).SelectAll());
+            accKol.ShowDialog(this);
         }
     }
 }

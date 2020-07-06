@@ -1,8 +1,11 @@
 DevExpress.XtraGrid.GridControl, DevExpress.XtraGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
-Telerik.WinControls.UI.RadGridView, Telerik.WinControls.GridView, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
-DevExpress.XtraEditors.GridLookUpEdit, DevExpress.XtraGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
-DevExpress.XtraPivotGrid.PivotGridControl, DevExpress.XtraPivotGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
-DevExpress.XtraVerticalGrid.VGridControl, DevExpress.XtraVerticalGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
-Telerik.WinControls.UI.RadRichTextEditorRuler, Telerik.WinControls.RichTextEditor, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
-DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
 DevExpress.XtraVerticalGrid.PropertyGridControl, DevExpress.XtraVerticalGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+Telerik.WinControls.UI.RadRichTextEditorRuler, Telerik.WinControls.RichTextEditor, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+Telerik.WinControls.UI.RadTitleBar, Telerik.WinControls.UI, Version=2020.1.218.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+DevExpress.XtraVerticalGrid.VGridControl, DevExpress.XtraVerticalGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+Telerik.WinControls.UI.RadGridView, Telerik.WinControls.GridView, Version=2020.1.218.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+Telerik.WinControls.UI.RadPanorama, Telerik.WinControls.UI, Version=2020.1.218.20, Culture=neutral, PublicKeyToken=5bb2a467cbec794e
+DevExpress.XtraBars.BarManager, DevExpress.XtraBars.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraPivotGrid.PivotGridControl, DevExpress.XtraPivotGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraEditors.TextEdit, DevExpress.XtraEditors.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
+DevExpress.XtraEditors.GridLookUpEdit, DevExpress.XtraGrid.v17.2, Version=17.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a
