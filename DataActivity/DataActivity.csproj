@@ -46,14 +46,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AbstarctModel.cs" />
     <Compile Include="accGeneral.cs">
       <DependentUpon>FinanceDataModel.tt</DependentUpon>
     </Compile>
     <Compile Include="AccGroup.cs">
       <DependentUpon>FinanceDataModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Repositories\AccGroupRepositories.cs" />
+    <Compile Include="AccKol.cs">
+      <DependentUpon>FinanceDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AccMon.cs">
+      <DependentUpon>FinanceDataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repositories\AccKolRepository.cs" />
+    <Compile Include="Repositories\AccMonRepository.cs" />
+    <Compile Include="Repositories\AccGroupRepository.cs" />
     <Compile Include="AccSobidiary.cs">
       <DependentUpon>FinanceDataModel.tt</DependentUpon>
     </Compile>

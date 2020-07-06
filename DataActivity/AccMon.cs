@@ -12,10 +12,12 @@ namespace DataActivity
     using System;
     using System.Collections.Generic;
     
-    public partial class AccGroup
+    public partial class AccMon
     {
         public int Id { get; set; }
-        public string GrpCode { get; set; }
-        public string GrpDscp { get; set; }
+        public Nullable<int> GrpCode { get; set; }
+        public Nullable<int> KolCode { get; set; }
+        public string MonCode { get; set; }
+        public string MonDscp { get; set; }
     }
 }

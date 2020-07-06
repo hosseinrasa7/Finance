@@ -29,13 +29,13 @@ namespace FinanceProject.Accounting
 
         private void accordionControlElement4_Click(object sender, EventArgs e)
         {
-            FrmAccMon accMon = new FrmAccMon((new AccGroupService()).SelectAll());
+            FrmAccMon accMon = new FrmAccMon((new AccMonService()).SelectAll());
             accMon.ShowDialog(this);
         }
 
         private void accordionControlElement3_Click(object sender, EventArgs e)
         {
-            FrmAccKol accKol = new FrmAccKol((new AccGroupService()).SelectAll());
+            FrmAccKol accKol = new FrmAccKol((new AccKolService()).SelectAll());
             accKol.ShowDialog(this);
         }
     }

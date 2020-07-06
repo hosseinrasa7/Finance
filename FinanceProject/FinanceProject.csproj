@@ -133,8 +133,6 @@
     <Compile Include="Accounting\BasicInformation\FrmAccMon.Designer.cs">
       <DependentUpon>FrmAccMon.cs</DependentUpon>
     </Compile>
-    <Compile Include="Accounting\IMainForm.cs" />
-    <Compile Include="Accounting\Models\AccGroupModel.cs" />
     <Compile Include="ConnectionSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +165,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\AccKolService.cs" />
+    <Compile Include="Services\AccMonService .cs" />
     <Compile Include="Services\AccGroupService.cs" />
     <Compile Include="Services\IService.cs" />
     <EmbeddedResource Include="Accounting\Accounting.resx">

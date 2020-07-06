@@ -30,6 +30,25 @@
           <Property Name="GrpCode" Type="varchar" MaxLength="50" />
           <Property Name="GrpDscp" Type="varchar(max)" />
         </EntityType>
+        <EntityType Name="AccKol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GrpCode" Type="int" />
+          <Property Name="KolCode" Type="int" />
+          <Property Name="KolDscp" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AccMon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GrpCode" Type="int" />
+          <Property Name="KolCode" Type="int" />
+          <Property Name="MonCode" Type="varchar" MaxLength="50" />
+          <Property Name="MonDscp" Type="varchar" MaxLength="50" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'FinanceDB.dbo.Dr_Actions' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="Dr_Actions">
@@ -75,6 +94,8 @@ warning 6002: The table/view 'FinanceDB.dbo.Dr_Actions' does not have a primary 
           <EntitySet Name="accGeneral" EntityType="Self.accGeneral" Schema="ACC" store:Type="Tables" />
           <EntitySet Name="AccSobidiary" EntityType="Self.AccSobidiary" Schema="ACC" store:Type="Tables" />
           <EntitySet Name="AccGroup" EntityType="Self.AccGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccKol" EntityType="Self.AccKol" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AccMon" EntityType="Self.AccMon" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WagEmployee" EntityType="Self.WagEmployee" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Dr_Actions" EntityType="Self.Dr_Actions" store:Type="Tables" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -154,6 +175,8 @@ warning 6002: The table/view 'FinanceDB.dbo.Dr_Actions' does not have a primary 
           <EntitySet Name="WagEmployees" EntityType="Self.WagEmployee" />
           <EntitySet Name="Dr_Actions" EntityType="Self.Dr_Actions" />
           <EntitySet Name="AccGroups" EntityType="FinanceDBModel.AccGroup" />
+          <EntitySet Name="AccKols" EntityType="FinanceDBModel.AccKol" />
+          <EntitySet Name="AccMons" EntityType="FinanceDBModel.AccMon" />
         </EntityContainer>
         <EntityType Name="AccGroup">
           <Key>
@@ -162,6 +185,25 @@ warning 6002: The table/view 'FinanceDB.dbo.Dr_Actions' does not have a primary 
           <Property Name="Id" Type="Int32" Nullable="false" />
           <Property Name="GrpCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="GrpDscp" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AccKol">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GrpCode" Type="Int32" />
+          <Property Name="KolCode" Type="Int32" />
+          <Property Name="KolDscp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AccMon">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GrpCode" Type="Int32" />
+          <Property Name="KolCode" Type="Int32" />
+          <Property Name="MonCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="MonDscp" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -235,6 +277,27 @@ warning 6002: The table/view 'FinanceDB.dbo.Dr_Actions' does not have a primary 
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="GrpDscp" ColumnName="GrpDscp" />
                 <ScalarProperty Name="GrpCode" ColumnName="GrpCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccKols">
+            <EntityTypeMapping TypeName="FinanceDBModel.AccKol">
+              <MappingFragment StoreEntitySet="AccKol">
+                <ScalarProperty Name="KolDscp" ColumnName="KolDscp" />
+                <ScalarProperty Name="KolCode" ColumnName="KolCode" />
+                <ScalarProperty Name="GrpCode" ColumnName="GrpCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AccMons">
+            <EntityTypeMapping TypeName="FinanceDBModel.AccMon">
+              <MappingFragment StoreEntitySet="AccMon">
+                <ScalarProperty Name="MonDscp" ColumnName="MonDscp" />
+                <ScalarProperty Name="MonCode" ColumnName="MonCode" />
+                <ScalarProperty Name="KolCode" ColumnName="KolCode" />
+                <ScalarProperty Name="GrpCode" ColumnName="GrpCode" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

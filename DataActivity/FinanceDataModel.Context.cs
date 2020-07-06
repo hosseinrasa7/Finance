@@ -16,7 +16,7 @@ namespace DataActivity
     public partial class FinanceDBEntities : DbContext
     {
         public FinanceDBEntities()
-            : base("name=FinanceDbConnection")
+            : base("name=FinanceDBEntities")
         {
         }
     
@@ -30,5 +30,7 @@ namespace DataActivity
         public virtual DbSet<WagEmployee> WagEmployees { get; set; }
         public virtual DbSet<Dr_Actions> Dr_Actions { get; set; }
         public virtual DbSet<AccGroup> AccGroups { get; set; }
+        public virtual DbSet<AccKol> AccKols { get; set; }
+        public virtual DbSet<AccMon> AccMons { get; set; }
     }
 }
